@@ -1,0 +1,19 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  /* Other layout styles will be inherited from the component that uses this wrapper (e.g. .job, .card) */
+}
+
+.spotlight {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* Keep it behind the main content but inside the card */
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure children sit above the spotlight */
+.card > *:not(.spotlight) {
+  position: relative;
+  z-index: 1;
+}

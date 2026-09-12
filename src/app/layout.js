@@ -36,16 +36,20 @@ const stolzl = localFont({
   ],
   variable: '--font-stolzl'
 });
-
 export const metadata = {
   title: "Bora Toker | Personal Website",
   description: "Personal website and portfolio of Bora Toker.",
 };
 
+import ClientBackground from '../components/ClientBackground';
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={stolzl.variable}>
-      <body>{children}</body>
+      <body>
+        <ClientBackground />
+        {children}
+      </body>
     </html>
   );
 }

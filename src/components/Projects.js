@@ -1,4 +1,6 @@
 import styles from './Projects.module.css';
+import FadeIn from './FadeIn';
+import SpotlightCard from './SpotlightCard';
 
 const projectList = [
   {
@@ -21,32 +23,37 @@ const projectList = [
     tech: ['Next.js', 'React', 'CSS Modules'],
     github: 'https://github.com/boratoker',
     demo: '/',
+    external: '/',
   },
 ];
 
 export default function Projects() {
   return (
     <section id="projects" className={`section container ${styles.projects}`}>
-      <h2 className="section-title"><span>02.</span> Some Things I've Built</h2>
+      <FadeIn>
+        <h2 className="section-title"><span>02.</span> Some Things I've Built</h2>
+      </FadeIn>
       
       <div className={styles.grid}>
         {projectList.map((project, index) => (
-          <div key={index} className={`glass-panel ${styles.card}`}>
-            <div className={styles.cardHeader}>
-              <div className={styles.folder}>📁</div>
-              <div className={styles.links}>
-                {project.github && <a href={project.github} target="_blank" rel="noreferrer">GH</a>}
-                {project.demo && <a href={project.demo} target="_blank" rel="noreferrer">↗</a>}
+          <FadeIn key={index} delay={index * 0.1}>
+            <SpotlightCard className={`glass-panel ${styles.card}`}>
+              <div className={styles.cardHeader}>
+                <div className={styles.folder}>📁</div>
+                <div className={styles.links}>
+                  {project.github && <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>}
+                  {project.external && <a href={project.external} target="_blank" rel="noreferrer">Live</a>}
+                </div>
               </div>
-            </div>
-            <h3 className={styles.title}>{project.title}</h3>
-            <p className={styles.description}>{project.description}</p>
-            <ul className={styles.techList}>
-              {project.tech.map((tech, i) => (
-                <li key={i}>{tech}</li>
-              ))}
-            </ul>
-          </div>
+              <h3 className={styles.title}>{project.title}</h3>
+              <p className={styles.description}>{project.description}</p>
+              <ul className={styles.techList}>
+                {project.tech.map((tech, i) => (
+                  <li key={i}>{tech}</li>
+                ))}
+              </ul>
+            </SpotlightCard>
+          </FadeIn>
         ))}
       </div>
     </section>

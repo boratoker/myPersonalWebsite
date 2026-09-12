@@ -1,5 +1,5 @@
 .experience {
-  max-width: 800px;
+  /* section specific styles */
 }
 
 .timeline {
@@ -9,6 +9,50 @@
   gap: 3rem;
 }
 
+.job {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2.5rem;
+  border-radius: 16px;
+  gap: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.job:hover {
+  transform: translateY(-5px);
+}
+
+.jobContent {
+  flex: 1;
+}
+
+.jobLogo {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.jobTypeBadge {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.25rem;
+  opacity: 0.7;
+}
+
 .jobHeader {
   margin-bottom: 1rem;
 }
@@ -16,19 +60,18 @@
 .role {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--foreground);
 }
 
 .company {
-  color: var(--primary);
+  font-weight: 700;
 }
 
 .range {
   font-family: monospace;
   font-size: 0.9rem;
-  color: var(--text-muted);
   display: block;
   margin-top: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 .detailsList {
@@ -40,7 +83,6 @@
   position: relative;
   padding-left: 20px;
   margin-bottom: 10px;
-  color: var(--text-muted);
   font-size: 1rem;
 }
 
@@ -48,13 +90,109 @@
   content: '▹';
   position: absolute;
   left: 0;
-  color: var(--secondary);
   font-size: 1.2rem;
   line-height: 16px;
+}
+
+/* Internship (Navy Blue) */
+.internship {
+  background-color: rgba(3, 56, 99, 0.25);
+  border: 1px solid rgba(106, 186, 251, 0.15);
+}
+.internship:hover {
+  box-shadow: 0 10px 30px -15px rgba(106, 186, 251, 0.2);
+}
+.internship .role, .internship .company, .internship .jobTypeBadge {
+  color: #cde8fe;
+}
+.internship .range, .internship .detailsList li {
+  color: #9cd1fc; 
+}
+.internship .detailsList li::before {
+  color: #6abafb;
+}
+.internship .jobLogo {
+  border-color: rgba(106, 186, 251, 0.4);
+  color: #6abafb;
+}
+
+/* Volunteering (Yellow) */
+.volunteering {
+  background-color: rgba(60, 40, 0, 0.4);
+  border: 1px solid rgba(255, 170, 51, 0.15);
+}
+.volunteering:hover {
+  box-shadow: 0 10px 30px -15px rgba(255, 170, 51, 0.2);
+}
+.volunteering .role, .volunteering .company, .volunteering .jobTypeBadge {
+  color: #ffeacc;
+}
+.volunteering .range, .volunteering .detailsList li {
+  color: #ffd599; 
+}
+.volunteering .detailsList li::before {
+  color: #ffbf66;
+}
+.volunteering .jobLogo {
+  border-color: rgba(255, 170, 51, 0.4);
+  color: #ffbf66;
+}
+
+/* Club (Crimson Red) */
+.club {
+  background-color: rgba(46, 5, 10, 0.4);
+  border: 1px solid rgba(236, 70, 90, 0.15);
+}
+.club:hover {
+  box-shadow: 0 10px 30px -15px rgba(236, 70, 90, 0.2);
+}
+.club .role, .club .company, .club .jobTypeBadge {
+  color: #fad1d6;
+}
+.club .range, .club .detailsList li {
+  color: #f5a3ac; 
+}
+.club .detailsList li::before {
+  color: #f07583;
+}
+.club .jobLogo {
+  border-color: rgba(236, 70, 90, 0.4);
+  color: #f07583;
+}
+
+/* Prize (Light Green) */
+.prize {
+  background-color: rgba(17, 51, 0, 0.4);
+  border: 1px solid rgba(119, 255, 51, 0.15);
+}
+.prize:hover {
+  box-shadow: 0 10px 30px -15px rgba(119, 255, 51, 0.2);
+}
+.prize .role, .prize .company, .prize .jobTypeBadge {
+  color: #ddffcc;
+}
+.prize .range, .prize .detailsList li {
+  color: #bbff99; 
+}
+.prize .detailsList li::before {
+  color: #77ff33;
+}
+.prize .jobLogo {
+  border-color: rgba(119, 255, 51, 0.4);
+  color: #77ff33;
 }
 
 @media (max-width: 768px) {
   .timeline {
     padding: 2rem 1.5rem;
+  }
+  
+  .job {
+    flex-direction: column-reverse;
+    padding: 1.5rem;
+  }
+  
+  .jobLogo {
+    margin-bottom: 1rem;
   }
 }
