@@ -1,0 +1,74 @@
+.projects {
+  /* specific styles */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.folder {
+  font-size: 2.5rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.links a {
+  color: var(--text-muted);
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.links a:hover {
+  color: var(--primary);
+}
+
+.title {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.techList li {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--secondary);
+}

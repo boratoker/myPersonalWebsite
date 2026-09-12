@@ -1,0 +1,121 @@
+.about {
+  /* section specific styles */
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.text p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.text p strong {
+  color: var(--primary);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0.5rem 1rem;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.skills li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.skills li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.2rem;
+  line-height: 12px;
+}
+
+.imageContainer {
+  position: relative;
+  max-width: 300px;
+}
+
+.imageWrapper {
+  border-radius: 8px;
+  background-color: var(--primary);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: var(--color-ink-black-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-ink-black-600);
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.imageContainer:hover .imageWrapper {
+  background-color: transparent;
+  transform: translate(-5px, -5px);
+}
+
+.imageContainer:hover .placeholderImage {
+  filter: none;
+  mix-blend-mode: normal;
+}
+
+.imageContainer::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  top: 15px;
+  left: 15px;
+  z-index: 0;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.imageContainer:hover::after {
+  top: 10px;
+  left: 10px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  
+  .imageContainer {
+    margin: 2rem auto;
+    width: 70%;
+  }
+}

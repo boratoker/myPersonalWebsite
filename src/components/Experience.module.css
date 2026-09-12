@@ -1,0 +1,60 @@
+.experience {
+  max-width: 800px;
+}
+
+.timeline {
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.jobHeader {
+  margin-bottom: 1rem;
+}
+
+.role {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.company {
+  color: var(--primary);
+}
+
+.range {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 0;
+}
+
+.detailsList li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.detailsList li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-size: 1.2rem;
+  line-height: 16px;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding: 2rem 1.5rem;
+  }
+}

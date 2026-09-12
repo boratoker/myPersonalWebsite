@@ -1,0 +1,180 @@
+:root {
+  /* Ink Black */
+  --color-ink-black-50: #e6f3fe;
+  --color-ink-black-100: #cde8fe;
+  --color-ink-black-200: #9cd1fc;
+  --color-ink-black-300: #6abafb;
+  --color-ink-black-400: #38a3fa;
+  --color-ink-black-500: #068cf9;
+  --color-ink-black-600: #0570c7;
+  --color-ink-black-700: #045495;
+  --color-ink-black-800: #033863;
+  --color-ink-black-900: #011c32;
+  --color-ink-black-950: #011423;
+
+  /* Porcelain */
+  --color-porcelain-50: #eeffe5;
+  --color-porcelain-100: #ddffcc;
+  --color-porcelain-200: #bbff99;
+  --color-porcelain-300: #99ff66;
+  --color-porcelain-400: #77ff33;
+  --color-porcelain-500: #55ff00;
+  --color-porcelain-600: #44cc00;
+  --color-porcelain-700: #339900;
+  --color-porcelain-800: #226600;
+  --color-porcelain-900: #113300;
+  --color-porcelain-950: #0c2400;
+
+  /* Light Sea Green */
+  --color-light-sea-green-50: #eafaf9;
+  --color-light-sea-green-100: #d6f5f2;
+  --color-light-sea-green-200: #acece5;
+  --color-light-sea-green-300: #83e2d8;
+  --color-light-sea-green-400: #5ad8cc;
+  --color-light-sea-green-500: #30cfbf;
+  --color-light-sea-green-600: #27a599;
+  --color-light-sea-green-700: #1d7c72;
+  --color-light-sea-green-800: #13534c;
+  --color-light-sea-green-900: #0a2926;
+  --color-light-sea-green-950: #071d1b;
+
+  /* Punch Red */
+  --color-punch-red-50: #fde8ea;
+  --color-punch-red-100: #fad1d6;
+  --color-punch-red-200: #f5a3ac;
+  --color-punch-red-300: #f07583;
+  --color-punch-red-400: #ec465a;
+  --color-punch-red-500: #e71830;
+  --color-punch-red-600: #b91327;
+  --color-punch-red-700: #8a0f1d;
+  --color-punch-red-800: #5c0a13;
+  --color-punch-red-900: #2e050a;
+  --color-punch-red-950: #200307;
+
+  /* Amber Glow */
+  --color-amber-glow-50: #fff4e5;
+  --color-amber-glow-100: #ffeacc;
+  --color-amber-glow-200: #ffd599;
+  --color-amber-glow-300: #ffbf66;
+  --color-amber-glow-400: #ffaa33;
+  --color-amber-glow-500: #ff9500;
+  --color-amber-glow-600: #cc7700;
+  --color-amber-glow-700: #995900;
+  --color-amber-glow-800: #663c00;
+  --color-amber-glow-900: #331e00;
+  --color-amber-glow-950: #241500;
+
+  /* Semantic Theme Variables */
+  --background: #050505;
+  --foreground: #f5f5f5;
+  --surface: #121212;
+  --surface-hover: #1a1a1a;
+  
+  --primary: var(--color-punch-red-500); /* Crimson */
+  --primary-hover: var(--color-punch-red-400);
+  
+  --secondary: var(--color-amber-glow-500); /* Golden Yellow */
+  --secondary-hover: var(--color-amber-glow-400);
+
+  --accent: var(--color-light-sea-green-500); /* Turquoise */
+
+  --text-muted: #888888;
+  --border: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  background: rgba(18, 18, 18, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+}
+
+/* Container Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Utility */
+.section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--foreground);
+}
+
+.section-title span {
+  color: var(--primary);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+/* Button Utility */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--color-ink-black-950);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(48, 207, 191, 0.3); /* light-sea-green shadow */
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(48, 207, 191, 0.1);
+  transform: translateY(-2px);
+}

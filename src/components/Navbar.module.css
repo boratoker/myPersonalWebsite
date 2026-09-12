@@ -1,0 +1,59 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Butonlar renkli olacağı için arka plan transparan olabilir */
+  background: transparent;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  height: 60px;
+}
+
+.navLinks {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  flex: 1;
+  display: flex;
+}
+
+.navLinks a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: filter 0.2s ease;
+  /* Buton hattı (border) kaldırıldı */
+}
+
+.navLinks a:hover {
+  filter: brightness(1.15);
+}
+
+/* Özel Buton Renkleri */
+.navHome a { background-color: var(--primary); color: #fff; } /* Kırmızı */
+.navAbout a { background-color: var(--secondary); color: #050505; } /* Sarı */
+.navProjects a { background-color: #30cfbf; color: #050505; } /* Cam göbeği */
+.navExperience a { background-color: #13534c; color: #ffffff; } /* Koyu turkuaz */
+.navContact a { background-color: #c8a2c8; color: #050505; } /* Lila */
+
+@media (max-width: 768px) {
+  .navLinks a {
+    font-size: 0.75rem;
+    letter-spacing: 0px;
+  }
+}
