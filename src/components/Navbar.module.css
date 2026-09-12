@@ -34,22 +34,66 @@
   justify-content: center;
   font-size: 0.95rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  transition: filter 0.2s ease;
-  /* Buton hattı (border) kaldırıldı */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.7s ease-out;
 }
 
-.navLinks a:hover {
-  filter: brightness(1.15);
+.navLinks a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background-color: var(--hover-bg, transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
 }
 
-/* Özel Buton Renkleri */
-.navHome a { background-color: var(--primary); color: #fff; } /* Kırmızı */
-.navAbout a { background-color: var(--secondary); color: #050505; } /* Sarı */
-.navProjects a { background-color: #30cfbf; color: #050505; } /* Cam göbeği */
-.navExperience a { background-color: #13534c; color: #ffffff; } /* Koyu turkuaz */
-.navContact a { background-color: #c8a2c8; color: #050505; } /* Lila */
+.navLinks a:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Özel Buton Renkleri ve Sıçrama (Splash) Efekti */
+.navHome a { 
+  background-color: var(--color-punch-red-500); 
+  color: var(--color-punch-red-50); 
+  --hover-bg: var(--color-punch-red-50);
+}
+.navHome a:hover { color: var(--color-punch-red-500); }
+
+.navAbout a { 
+  background-color: var(--color-amber-glow-500); 
+  color: var(--color-amber-glow-950); 
+  --hover-bg: var(--color-amber-glow-950);
+}
+.navAbout a:hover { color: var(--color-amber-glow-500); }
+
+.navProjects a { 
+  background-color: var(--color-light-sea-green-500); 
+  color: var(--color-light-sea-green-950); 
+  --hover-bg: var(--color-light-sea-green-950);
+}
+.navProjects a:hover { color: var(--color-light-sea-green-500); }
+
+.navExperience a { 
+  background-color: var(--color-light-sea-green-800); 
+  color: var(--color-light-sea-green-50); 
+  --hover-bg: var(--color-light-sea-green-50);
+}
+.navExperience a:hover { color: var(--color-light-sea-green-800); }
+
+.navContact a { 
+  background-color: #c8a2c8; /* Lila (Açık) */
+  color: #3b1d3b; /* Koyu Lila */
+  --hover-bg: #3b1d3b;
+}
+.navContact a:hover { color: #c8a2c8; }
 
 @media (max-width: 768px) {
   .navLinks a {
