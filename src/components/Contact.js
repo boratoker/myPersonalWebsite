@@ -17,8 +17,18 @@ export default function Contact() {
       
       <footer className={styles.footer}>
         <div className={styles.socials}>
-          <a href="/github" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="/linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="/github" target="_blank" rel="noreferrer" className={`${styles.socialBtn} ${styles.github}`} aria-label="GitHub">
+            <img src="/github_icon.png" alt="GitHub" className={styles.iconImg} />
+          </a>
+          <a href="/linkedin" target="_blank" rel="noreferrer" className={`${styles.socialBtn} ${styles.linkedin}`} aria-label="LinkedIn">
+            <img src="/linkedin_icon.png" alt="LinkedIn" className={styles.iconImg} />
+          </a>
+          <a href="/instagram" target="_blank" rel="noreferrer" className={`${styles.socialBtn} ${styles.instagram}`} aria-label="Instagram">
+            <img src="/instagram_icon.png" alt="Instagram" className={styles.iconImg} />
+          </a>
+          <a href="/spotify" target="_blank" rel="noreferrer" className={`${styles.socialBtn} ${styles.spotify}`} aria-label="Spotify">
+            <img src="/spotify_icon.png" alt="Spotify" className={styles.iconImg} />
+          </a>
         </div>
         <p className={styles.copyright}>
           Designed & Built by Bora Toker<br/>
