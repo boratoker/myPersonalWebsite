@@ -14,6 +14,25 @@
   font-family: monospace;
   font-size: 1.1rem;
   margin-bottom: 1rem;
+  
+  /* Typing Animation Styles */
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid var(--primary);
+  width: 14ch; /* "Hi, my name is" = 14 karakter */
+  animation: 
+    typing 1s steps(14, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 14ch; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--primary); }
 }
 
 .name {
